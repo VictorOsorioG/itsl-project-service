@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: itsl-project-service
+  webflux:
+    base-path: /itsl/project-service
+  r2dbc:
+    url: r2dbc:postgresql://${ITSl_DB_URL}:${ITSL_DB_PORT}/${ITSL_DB_DATABASE}?currentSchema=${ITSL_DB_SCHEMA}
+    username: ${ITSL_DB_USERNAME}
+    password: ${ITSL_DB_PASSWORD}
+  flyway:
+    enabled: true
+    url: jdbc:postgresql://${ITSl_DB_URL}:${ITSL_DB_PORT}/${ITSL_DB_DATABASE}
+    user: ${ITSL_DB_USERNAME}
+    password: ${ITSL_DB_PASSWORD}
+    schemas: ${ITSL_DB_SCHEMA}
+  logging:
+    level:
+      root: info
+
+server:
+  port: 8082
